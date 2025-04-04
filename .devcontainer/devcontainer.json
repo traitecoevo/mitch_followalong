@@ -1,0 +1,19 @@
+{
+    "name": "R",
+    "image": "rocker/tidyverse:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "REditorSupport.r",
+                "REditorSupport.r-lsp",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    },
+    "postCreateCommand": "Rscript -e \"install.packages(c('languageserver', 'httpgd'), repos='https://cloud.r-project.org')\"",
+    "forwardPorts": [8787],
+    "remoteUser": "rstudio"
+}
